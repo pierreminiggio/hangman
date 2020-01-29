@@ -1,0 +1,17 @@
+{% extends 'base.html.twig' %}
+
+{% block title 'Sign-in' %}
+
+{% block body %}
+    <h2>Access your player account</h2>
+
+    <form action="/login_check" method="post">
+        <label for="username">Username:</label>
+        <input type="text" id="username" name="my_login" value="" />
+
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="my_secret" />
+
+        <button type="submit">login</button>
+    </form>
+{% endblock %}

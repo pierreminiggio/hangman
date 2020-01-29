@@ -3,15 +3,20 @@
 
 namespace App\Controller;
 
-use App\ServeHtml;
+use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 
 /**
  * @Route("/game")
  */
-class GameController
+class GameController extends AbstractController
 {
+
+    public function templateFolder() : string
+    {
+        return 'game/';
+    }
 
     /**
       * @Route(
@@ -21,7 +26,7 @@ class GameController
       */
     public function index(): Response
     {
-        return new Response((new ServeHtml())->serve('game'));
+        return $this->render($this->templateFolder() . 'index.html.twig');
     }
 
     /**
@@ -33,7 +38,7 @@ class GameController
       */
     public function won(): Response
     {
-        return new Response((new ServeHtml())->serve('won'));
+        return $this->render($this->templateFolder() . 'won.html.twig');
     }
 
     /**
@@ -45,6 +50,6 @@ class GameController
       */
     public function failed(): Response
     {
-        return new Response((new ServeHtml())->serve('failed'));
+        return $this->render($this->templateFolder() . 'lost.html.twig');
     }
 }

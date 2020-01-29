@@ -1,0 +1,189 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h2>Guess the mysterious word</h2>
+
+    <p class="attempts">
+        You still have 11 remaining attempts.
+    </p>
+
+    <ul class="word_letters">
+        <li class="letter hidden">
+            ?
+        </li>
+        <li class="letter hidden">
+            ?
+        </li>
+        <li class="letter hidden">
+            ?
+        </li>
+        <li class="letter hidden">
+            ?
+        </li>
+        <li class="letter hidden">
+            ?
+        </li>
+        <li class="letter hidden">
+            ?
+        </li>
+        <li class="letter hidden">
+            ?
+        </li>
+        <li class="letter hidden">
+            ?
+        </li>
+    </ul>
+
+    <br class="clearfix" />
+
+    <p class="attempts">
+        <a href="/game/reset">Reset the game</a>
+    </p>
+
+    <br class="clearfix" />
+
+    <h2>Try a letter</h2>
+
+    <ul>
+        <li class="letter">
+            <a href="/game/letter/A">
+                A
+            </a>
+        </li>
+        <li class="letter">
+            <a href="/game/letter/B">
+                B
+            </a>
+        </li>
+        <li class="letter">
+            <a href="/game/letter/C">
+                C
+            </a>
+        </li>
+        <li class="letter">
+            <a href="/game/letter/D">
+                D
+            </a>
+        </li>
+        <li class="letter">
+            <a href="/game/letter/E">
+                E
+            </a>
+        </li>
+        <li class="letter">
+            <a href="/game/letter/F">
+                F
+            </a>
+        </li>
+        <li class="letter">
+            <a href="/game/letter/G">
+                G
+            </a>
+        </li>
+        <li class="letter">
+            <a href="/game/letter/H">
+                H
+            </a>
+        </li>
+        <li class="letter">
+            <a href="/game/letter/I">
+                I
+            </a>
+        </li>
+        <li class="letter">
+            <a href="/game/letter/J">
+                J
+            </a>
+        </li>
+        <li class="letter">
+            <a href="/game/letter/K">
+                K
+            </a>
+        </li>
+        <li class="letter">
+            <a href="/game/letter/L">
+                L
+            </a>
+        </li>
+        <li class="letter">
+            <a href="/game/letter/M">
+                M
+            </a>
+        </li>
+        <li class="letter">
+            <a href="/game/letter/N">
+                N
+            </a>
+        </li>
+        <li class="letter">
+            <a href="/game/letter/O">
+                O
+            </a>
+        </li>
+        <li class="letter">
+            <a href="/game/letter/P">
+                P
+            </a>
+        </li>
+        <li class="letter">
+            <a href="/game/letter/Q">
+                Q
+            </a>
+        </li>
+        <li class="letter">
+            <a href="/game/letter/R">
+                R
+            </a>
+        </li>
+        <li class="letter">
+            <a href="/game/letter/S">
+                S
+            </a>
+        </li>
+        <li class="letter">
+            <a href="/game/letter/T">
+                T
+            </a>
+        </li>
+        <li class="letter">
+            <a href="/game/letter/U">
+                U
+            </a>
+        </li>
+        <li class="letter">
+            <a href="/game/letter/V">
+                V
+            </a>
+        </li>
+        <li class="letter">
+            <a href="/game/letter/W">
+                W
+            </a>
+        </li>
+        <li class="letter">
+            <a href="/game/letter/X">
+                X
+            </a>
+        </li>
+        <li class="letter">
+            <a href="/game/letter/Y">
+                Y
+            </a>
+        </li>
+        <li class="letter">
+            <a href="/game/letter/Z">
+                Z
+            </a>
+        </li>
+    </ul>
+
+    <h2>Try a word</h2>
+
+    <form action="/game/word" method="post">
+        <p>
+            <label for="word">Word:</label>
+            <input type="text" id="word" name="word"/>
+            <button type="submit">Let me guess...</button>
+        </p>
+    </form>
+{% endblock %}

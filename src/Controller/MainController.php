@@ -3,12 +3,12 @@
 
 namespace App\Controller;
 
-use App\ServeHtml;
+use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 
 
-class MainController
+class MainController extends AbstractController
 {
     /**
       * @Route(
@@ -19,6 +19,6 @@ class MainController
       */
     public function index(): Response
     {
-        return new Response((new ServeHtml())->serve('index'));
+        return $this->render('index.html.twig');
     }
 }
