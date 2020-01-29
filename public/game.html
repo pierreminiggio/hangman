@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Hangman Game</title>
+    <link rel="stylesheet" type="text/css" href="css/style.css" />
+    <link rel="shortcut icon" href="/favicon.ico" />
+</head>
+<body>
+<div id="wrapper">
+<div id="header">
+    <div id="logo">
+        <h1>
+            <a href="/">Hangman</a>
+        </h1>
+    </div>
+    <div id="menu">
+        <ul>
+            <li class="first current_page_item">
+                <a href="/game/">Game</a>
+            </li>
+            <li>
+                <a href="/signup">Register</a>
+            </li>
+            <li>
+                <a href="/signin">Login</a>
+            </li>
+            <li>
+                <a href="#">Contact</a>
+            </li>
+        </ul>
+        <br class="clearfix" />
+    </div>
+</div>
+
+<div id="page">
+<div id="content">
+
+    <h2>Guess the mysterious word</h2>
+
+    <p class="attempts">
+        You still have 11 remaining attempts.
+    </p>
+
+    <ul class="word_letters">
+        <li class="letter hidden">
+            ?
+        </li>
+        <li class="letter hidden">
+            ?
+        </li>
+        <li class="letter hidden">
+            ?
+        </li>
+        <li class="letter hidden">
+            ?
+        </li>
+        <li class="letter hidden">
+            ?
+        </li>
+        <li class="letter hidden">
+            ?
+        </li>
+        <li class="letter hidden">
+            ?
+        </li>
+        <li class="letter hidden">
+            ?
+        </li>
+    </ul>
+
+    <br class="clearfix" />
+
+    <p class="attempts">
+        <a href="/game/reset">Reset the game</a>
+    </p>
+
+    <br class="clearfix" />
+
+    <h2>Try a letter</h2>
+
+    <ul>
+        <li class="letter">
+            <a href="/game/letter/A">
+                A
+            </a>
+        </li>
+        <li class="letter">
+            <a href="/game/letter/B">
+                B
+            </a>
+        </li>
+        <li class="letter">
+            <a href="/game/letter/C">
+                C
+            </a>
+        </li>
+        <li class="letter">
+            <a href="/game/letter/D">
+                D
+            </a>
+        </li>
+        <li class="letter">
+            <a href="/game/letter/E">
+                E
+            </a>
+        </li>
+        <li class="letter">
+            <a href="/game/letter/F">
+                F
+            </a>
+        </li>
+        <li class="letter">
+            <a href="/game/letter/G">
+                G
+            </a>
+        </li>
+        <li class="letter">
+            <a href="/game/letter/H">
+                H
+            </a>
+        </li>
+        <li class="letter">
+            <a href="/game/letter/I">
+                I
+            </a>
+        </li>
+        <li class="letter">
+            <a href="/game/letter/J">
+                J
+            </a>
+        </li>
+        <li class="letter">
+            <a href="/game/letter/K">
+                K
+            </a>
+        </li>
+        <li class="letter">
+            <a href="/game/letter/L">
+                L
+            </a>
+        </li>
+        <li class="letter">
+            <a href="/game/letter/M">
+                M
+            </a>
+        </li>
+        <li class="letter">
+            <a href="/game/letter/N">
+                N
+            </a>
+        </li>
+        <li class="letter">
+            <a href="/game/letter/O">
+                O
+            </a>
+        </li>
+        <li class="letter">
+            <a href="/game/letter/P">
+                P
+            </a>
+        </li>
+        <li class="letter">
+            <a href="/game/letter/Q">
+                Q
+            </a>
+        </li>
+        <li class="letter">
+            <a href="/game/letter/R">
+                R
+            </a>
+        </li>
+        <li class="letter">
+            <a href="/game/letter/S">
+                S
+            </a>
+        </li>
+        <li class="letter">
+            <a href="/game/letter/T">
+                T
+            </a>
+        </li>
+        <li class="letter">
+            <a href="/game/letter/U">
+                U
+            </a>
+        </li>
+        <li class="letter">
+            <a href="/game/letter/V">
+                V
+            </a>
+        </li>
+        <li class="letter">
+            <a href="/game/letter/W">
+                W
+            </a>
+        </li>
+        <li class="letter">
+            <a href="/game/letter/X">
+                X
+            </a>
+        </li>
+        <li class="letter">
+            <a href="/game/letter/Y">
+                Y
+            </a>
+        </li>
+        <li class="letter">
+            <a href="/game/letter/Z">
+                Z
+            </a>
+        </li>
+    </ul>
+
+    <h2>Try a word</h2>
+
+    <form action="/game/word" method="post">
+        <p>
+            <label for="word">Word:</label>
+            <input type="text" id="word" name="word"/>
+            <button type="submit">Let me guess...</button>
+        </p>
+    </form>
+
+</div>
+<div id="sidebar">
+    <h3>Last Games</h3>
+    <div class="date-list">
+        <ul class="list date-list">
+
+            <li class="first"><span class="date">Jan 13</span> <a href="#">Ultrices quisque molestie</a></li>
+            <li><span class="date">Jan 7</span> <a href="#">Neque dolor eget</a></li>
+            <li><span class="date">Jan 1</span> <a href="#">Sollicitudin interdum</a></li>
+            <li class="last"><span class="date">Dec 26</span> <a href="#">Varius dignissim</a></li>
+
+        </ul>
+    </div>
+    <h3>Last players</h3>
+    <ul>
+        <li>user 1</li>
+        <li>user 2</li>
+        <li>user 3</li>
+        <li>user 4</li>
+        <li>user 5</li>
+    </ul>
+</div>
+<br class="clearfix" />
+</div>
+</div>
+
+</body>
+</html>
