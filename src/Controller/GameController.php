@@ -7,12 +7,14 @@ use App\ServeHtml;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 
+/**
+ * @Route("/game")
+ */
 class GameController
 {
 
     /**
       * @Route(
-      *     "/game",
       *     name="app_game_index",
       *     methods={"GET"}
       * )
@@ -24,7 +26,7 @@ class GameController
 
     /**
       * @Route(
-      *     "/game/won",
+      *     "/won",
       *     name="app_game_won",
       *     methods={"GET"}
       * )
@@ -36,7 +38,7 @@ class GameController
 
     /**
       * @Route(
-      *     "/game/failed",
+      *     "/failed",
       *     name="app_game_failed",
       *     methods={"GET"}
       * )
