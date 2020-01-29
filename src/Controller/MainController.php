@@ -13,7 +13,8 @@ class MainController
     /**
       * @Route(
       *     "/",
-      *     name="app_main_index"
+      *     name="app_main_index",
+      *     methods={"GET"}
       * )
       */
     public function index(): Response

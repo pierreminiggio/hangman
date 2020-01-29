@@ -13,7 +13,8 @@ class GameController
     /**
       * @Route(
       *     "/game",
-      *     name="app_game_game"
+      *     name="app_game_game",
+      *     methods={"GET"}
       * )
       */
     public function game(): Response
@@ -24,7 +25,8 @@ class GameController
     /**
       * @Route(
       *     "/game/won",
-      *     name="app_game_won"
+      *     name="app_game_won",
+      *     methods={"GET"}
       * )
       */
     public function won(): Response
@@ -35,7 +37,8 @@ class GameController
     /**
       * @Route(
       *     "/game/failed",
-      *     name="app_game_failed"
+      *     name="app_game_failed",
+      *     methods={"GET"}
       * )
       */
     public function failed(): Response
