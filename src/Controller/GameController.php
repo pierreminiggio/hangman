@@ -13,7 +13,7 @@ use Symfony\Component\Routing\Annotation\Route;
 class GameController extends AbstractController
 {
 
-    public function templateFolder() : string
+    public function templateFolder(): string
     {
         return 'game/';
     }

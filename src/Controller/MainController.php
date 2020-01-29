@@ -10,6 +10,12 @@ use Symfony\Component\Routing\Annotation\Route;
 
 class MainController extends AbstractController
 {
+
+    public function templateFolder(): string
+    {
+        return 'main/';
+    }
+
     /**
       * @Route(
       *     "/",
@@ -19,6 +25,6 @@ class MainController extends AbstractController
       */
     public function index(): Response
     {
-        return $this->render('index.html.twig');
+        return $this->render($this->templateFolder() . 'index.html.twig');
     }
 }

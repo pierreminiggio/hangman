@@ -1,8 +1,6 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}
-    {{ parent() }} - You won!
-{% endblock %}
+{% block title parent() ~ ' - You won' %}
 
 {% block content %}
     <h2>Congratulations!</h2>
