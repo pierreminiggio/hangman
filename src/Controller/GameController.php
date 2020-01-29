@@ -13,11 +13,11 @@ class GameController
     /**
       * @Route(
       *     "/game",
-      *     name="app_game_game",
+      *     name="app_game_index",
       *     methods={"GET"}
       * )
       */
-    public function game(): Response
+    public function index(): Response
     {
         return new Response((new ServeHtml())->serve('game'));
     }
