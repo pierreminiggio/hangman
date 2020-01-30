@@ -93,9 +93,11 @@ class GameController extends AbstractController
       *     methods={"GET"}
       * )
       */
-    public function won(): Response
+    public function won(GameRunner $runner): Response
     {
-        return $this->render($this->templateFolder() . 'won.html.twig');
+        return $this->render($this->templateFolder() . 'won.html.twig', [
+            'game' => $runner->resetGameOnSuccess()
+        ]);
     }
 
     /**
@@ -105,8 +107,10 @@ class GameController extends AbstractController
       *     methods={"GET"}
       * )
       */
-    public function failed(): Response
+    public function failed(GameRunner $runner): Response
     {
-        return $this->render($this->templateFolder() . 'lost.html.twig');
+        return $this->render($this->templateFolder() . 'lost.html.twig', [
+            'game' => $runner->resetGameOnFailure()
+        ]);
     }
 }
