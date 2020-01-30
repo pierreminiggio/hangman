@@ -40,15 +40,12 @@ class MainController extends AbstractController
     {
         $form = $this->createForm(ContactType::class);
 
-        if ($request->isMethod('POST')) {
+        $form->handleRequest($request);
 
-            $form->submit($request->request->get($form->getName()));
+        if ($form->isSubmitted() && $form->isValid()) {
 
-            if ($form->isSubmitted() && $form->isValid()) {
-
-                // To do send mail
-                return $this->redirectToRoute('app_main_index');
-            }
+            // To do send mail
+            return $this->redirectToRoute('app_main_index');
         }
 
         return $this->render($this->templateFolder() . 'contact.html.twig', [
