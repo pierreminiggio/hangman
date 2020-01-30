@@ -56,9 +56,14 @@ class GameController extends AbstractController
       */
     public function letter(string $letter, GameRunner $runner): Response
     {
-        return $this->render($this->templateFolder() . 'index.html.twig', [
-            'game' => $runner->playLetter($letter)
-        ]);
+        $game = $runner->playLetter($letter);
+        if ($game->isWon()) {
+            return $this->redirectToRoute('app_game_won');
+        }
+        if ($game->isHanged()) {
+            return $this->redirectToRoute('app_game_failed');
+        }
+        return $this->redirectToRoute('app_game_index');
     }
 
     /**
