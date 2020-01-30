@@ -4,6 +4,10 @@
 # Put parameters here that don't need to change on each machine where the app is deployed
 # https://symfony.com/doc/current/best_practices/configuration.html#application-related-configuration
 parameters:
+    app.game.dictionaries:
+        - '%kernel.project_dir%/data/words.txt'
+        - '%kernel.project_dir%/data/words.xml'
+
 
 services:
     # default configuration for services in *this* file
@@ -25,3 +29,17 @@ services:
 
     # add more service definitions when explicit configuration is needed
     # please note that last definitions always *replace* previous ones
+
+    App\Game\WordList:
+        calls:
+            - method: addLoader
+              arguments:
+                  - txt
+                  - '@App\Game\Loader\TextFileLoader'
+            - method: addLoader
+              arguments:
+                  - xml
+                  - '@App\Game\Loader\XmlFileLoader'
+            - method: loadDictionaries
+              arguments: ['%app.game.dictionaries%']
+
