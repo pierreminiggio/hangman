@@ -44,8 +44,13 @@ class MainController extends AbstractController
 
         if ($form->isSubmitted() && $form->isValid()) {
 
-            // To do send mail
-            return $this->redirectToRoute('app_main_index');
+            $data = $form->getData();
+            dump($data);
+            // Todo send mail
+
+            $this->addFlash('success', 'Thank you for contacting us');
+
+            return $this->redirectToRoute('app_main_contact');
         }
 
         return $this->render($this->templateFolder() . 'contact.html.twig', [
