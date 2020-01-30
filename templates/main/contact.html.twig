@@ -1,0 +1,9 @@
+{% extends 'base.html.twig' %}
+
+{% block title parent() ~ ' - Contact' %}
+
+{% block content %}
+    <h2>Contact</h2>
+
+    {{ form(contact_form) }}
+{% endblock %}
