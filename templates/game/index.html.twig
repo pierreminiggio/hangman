@@ -4,13 +4,14 @@
     <h2>Guess the mysterious word</h2>
 
     <p class="attempts">
-        You still have {{ game.getRemainingAttempts() }} remaining attempts.
+        You still have {{ game.getRemainingAttempts }} remaining attempts.
     </p>
 
     <ul class="word_letters">
-        {% for i in 1..8 %}
-            <li class="letter hidden">
-                ?
+        {% for letter in game.wordLetters %}
+            {% set letter_found = game.isLetterFound(letter) %}
+            <li class="letter{{ not letter_found ? ' hidden' }}">
+                {{ letter_found ? letter : '?' }}
             </li>
         {% endfor %}
     </ul>
