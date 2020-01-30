@@ -75,9 +75,15 @@ class GameController extends AbstractController
       */
     public function word(GameRunner $runner, Request $request): Response
     {
-        return $this->render($this->templateFolder() . 'index.html.twig', [
-            'game' => $runner->playWord($request->request->get('word'))
-        ]);
+        $game = $runner->playWord(
+            $request->request->getAlpha('word')
+        );
+
+        if ($game->isWon()) {
+            return $this->redirectToRoute('app_game_won');
+        }
+
+        return $this->redirectToRoute('app_game_failed');
     }
 
     /**
