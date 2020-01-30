@@ -34,6 +34,20 @@ class GameController extends AbstractController
 
     /**
       * @Route(
+      *     "/reset",
+      *     name="app_game_reset",
+      *     methods={"GET"}
+      * )
+      */
+    public function reset(GameRunner $runner): Response
+    {
+        return $this->render($this->templateFolder() . 'index.html.twig', [
+            'game' => $runner->resetGame()
+        ]);
+    }
+
+    /**
+      * @Route(
       *     "/won",
       *     name="app_game_won",
       *     methods={"GET"}
