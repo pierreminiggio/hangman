@@ -5,6 +5,7 @@ namespace App\Controller;
 
 use App\Game\GameRunner;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 
@@ -41,8 +42,35 @@ class GameController extends AbstractController
       */
     public function reset(GameRunner $runner): Response
     {
+        $runner->resetGame();
+        return $this->redirectToRoute('app_game_index');
+    }
+
+    /**
+      * @Route(
+      *     "/letter/{letter}",
+      *     name="app_game_letter",
+      *     methods={"GET"}
+      * )
+      */
+    public function letter(string $letter, GameRunner $runner): Response
+    {
         return $this->render($this->templateFolder() . 'index.html.twig', [
-            'game' => $runner->resetGame()
+            'game' => $runner->playLetter($letter)
+        ]);
+    }
+
+    /**
+      * @Route(
+      *     "/word",
+      *     name="app_game_word",
+      *     methods={"POST"}
+      * )
+      */
+    public function word(GameRunner $runner, Request $request): Response
+    {
+        return $this->render($this->templateFolder() . 'index.html.twig', [
+            'game' => $runner->playWord($request->request->get('word'))
         ]);
     }
 
