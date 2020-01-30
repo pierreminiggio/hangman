@@ -50,6 +50,7 @@ class GameController extends AbstractController
       * @Route(
       *     "/letter/{letter}",
       *     name="app_game_letter",
+      *     requirements={"letter": "[A-Z]"},
       *     methods={"GET"}
       * )
       */
